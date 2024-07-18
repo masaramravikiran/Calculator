@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+  #main{width: 300px; height: 280px; background-color: black;}
+  input{width: 20%; height: 40px; font-size: 20px; margin: 6px;}
+  #MRK{width: 96%; height: 50px; background-color: aqua;}
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id = "main">
+    <form name = "f">
+          <input type="text" name="rk" placeholder="0" id="MRK"> <br>
+
+          <input type="button" value="1" onclick="f.rk.value+=1">
+          <input type="button" value="2" onclick="f.rk.value+=2">
+          <input type="button" value="3" onclick="f.rk.value+=3">
+          <input type="button" value="+" onclick="add()">
+          <br>
+          <input type="button" value="4" onclick="f.rk.value+=4">
+          <input type="button" value="5" onclick="f.rk.value+=5">
+          <input type="button" value="6" onclick="f.rk.value+=6">
+          <input type="button" value="-" onclick="sub()">
+          <br>
+          <input type="button" value="7" onclick="f.rk.value+=7">
+          <input type="button" value="8" onclick="f.rk.value+=8">
+          <input type="button" value="9" onclick="f.rk.value+=9">
+          <input type="button" value="/" onclick="div()">
+          <br>
+          <input type="button" value="c" onclick="f.rk.value='  '">
+          <input type="button" value="0" onclick="f.rk.value+=1">
+          <input type="button" value="=" onclick="f.rk.value=eval(f.rk.value)">
+          <input type="button" value="x" onclick="mul()">
+
+    </form>
+
+  </div>
+  <script>
+    function add(){
+      var car=0,b=0;
+      car=f.rk.value;
+      b=car.charAt(car.length-1);
+      if(b=='+' || b=='-' || b=='/' || b=='*'){
+        f.rk.value=car.substring(0,car.length-1);
+        f.rk.value+='+';
+      }else{
+        f.rk.value+='+';
+      }
+    }
+
+
+
+    function sub(){
+      var car=0,b=0;
+      car=f.rk.value;
+      b=car.charAt(car.length-1);
+      if(b=='+' || b=='-' || b=='/' || b=='*'){
+        f.rk.value=car.substring(0,car.length-1);
+        f.rk.value+='-';
+      }else{
+        f.rk.value+='-';
+      }
+    }
+
+    function mul(){
+      var car=0,b=0;
+      car=f.rk.value;
+      b=car.charAt(car.length-1);
+      if(b=='+' || b=='-' || b=='/' || b=='*'){
+        f.rk.value=car.substring(0,car.length-1);
+        f.rk.value+='*';
+      }else{
+        f.rk.value+='*';
+      }
+    }
+
+    function div(){
+      var car=0,b=0;
+      car=f.rk.value;
+      b=car.charAt(car.length-1);
+      if(b=='+' || b=='-' || b=='/' || b=='*'){
+        f.rk.value=car.substring(0,car.length-1);
+        f.rk.value+='/';
+      }else{
+        f.rk.value+='/';
+      }
+    }
+  </script>
+</body>
+</html>
